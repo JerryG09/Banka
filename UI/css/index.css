@@ -25,6 +25,11 @@ header {
   z-index: 999;  
 }
 
+.logo-s {
+  text-align: center;
+  grid-column: 3 / 4
+}
+
 header h1 {
   margin: 0
 }
@@ -158,8 +163,79 @@ nav a:hover{
   justify-content: center;
   flex-direction: column;
   text-align: center;
-  font-size: 44px;
   color: white;
+}
+
+.main-wrapper-1 {
+  height: 100vh;
+  background-image: url('../img/showcase.jpg');
+  background-color: #333;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-wrapper {  
+  margin-top: 5rem;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  text-align: center;
+  width: 70%;
+  color: #521f1f;
+  background: #f3f3f3;
+  padding: 1em
+}
+
+@media only screen and (max-width:540px) {
+  .form-wrapper {
+    width: 100%;
+    height: 100vh;
+    font-size: 24px;
+    margin: 0;
+  }
+  .form-wrapper p {
+    font-size: 12px
+  }
+}
+
+.form-wrapper input {
+  padding: 10px
+}
+
+.form-wrapper input[type="password"],
+.form-wrapper input[type="email"],
+.form-wrapper input[type="text"]{
+  border: .5px solid #9e8d8d;
+  background: -o-repeating-linear-gradient();
+  margin-top: .8em;
+  height: 2.5rem;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
+.btn{
+  height: 2.5rem;
+  font-size: 16px;
+  background: rgb(72, 163, 140);
+  cursor: pointer;
+  border-radius: 20px;
+  border: none;
+  width: 14rem;
+  outline: none;
+  color: #fff;
+  float: right;
+}
+
+.btn:hover{
+  background: rgb(8, 250, 101);
+  color: #fff;
+}
+
+.main-wrapper p {
+  font-size: 44px;
 }
 
 
