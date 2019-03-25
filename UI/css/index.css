@@ -1,6 +1,8 @@
 :root {
-  --background: rgba(5, 214, 10, 0.95);
-  --dark: rgba(0, 0, 10, 0.95)
+  --background: rgba(5, 214, 10);
+  --dark: rgba(0, 0, 10, 0.95);
+  --dark-background: rgba(253, 253, 253, 0.95);
+  --light-background: rgba(233, 233, 245, 0.95);
 }
 
 
@@ -28,6 +30,19 @@ header {
 .logo-s {
   text-align: center;
   grid-column: 3 / 4
+}
+
+.logo-sp {
+  text-align: center;
+  grid-column: 1 / 2
+}
+
+header a {
+  text-align: right;
+  grid-column: 4;
+  padding: 1em;
+  text-decoration: none;
+  color: var(--dark)
 }
 
 header h1 {
@@ -200,6 +215,74 @@ nav a:hover{
   border-radius: 50px;
 }
 
+/* User Profile */
+.main-wrapper-u {
+  display: flex;
+  height: 140vh;
+  background-image: url('../img/showcase.jpg');
+}
+
+.group {
+  margin-top: 3.2rem;
+  display: flex;
+  flex: 1;
+}
+
+.user-profile {
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--light-background);
+  padding-top: .5rem;
+  flex: 1 1 5rem;
+}
+
+.user-profile .top {
+  flex: 1;
+  border-bottom: 2px solid #030303;
+}
+
+.user-profile .top img {
+  width: 110px;
+  border-radius: 70px;
+}
+
+.user-profile .bottom {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  text-transform: uppercase;
+  padding-left: .5rem;
+}
+
+.bottom a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.bottom a:hover {
+  background: var(--dark-background);
+}
+
+.u-content {
+  font-size: 1.5rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  padding: .5rem;
+  background-color: var(--dark-background);
+  padding-top: 3rem;
+  flex: 4 4;
+}
+
+@media all and (max-width: 540px) {
+  .group {
+      flex-direction: column
+  }
+}
+
 @media only screen and (max-width:540px) {
   .form-wrapper {
     width: 100%;
@@ -220,8 +303,13 @@ nav a:hover{
   padding: 10px
 }
 
+.form-wrapper option[value="hidden"] {
+  display: none
+}
+
 .form-wrapper input[type="password"],
 .form-wrapper input[type="email"],
+.form-wrapper select[id="account"],
 .form-wrapper input[type="text"]{
   border: .5px solid #9e8d8d;
   background: -o-repeating-linear-gradient();
