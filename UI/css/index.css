@@ -189,6 +189,17 @@ nav a:hover{
   padding: 1em
 }
 
+.form-wrapper a {
+  text-decoration: none;
+  color:  rgb(72, 163, 140);
+  margin: 1.4em;
+}
+
+.form-wrapper img {
+  width: 80px;
+  border-radius: 50px;
+}
+
 @media only screen and (max-width:540px) {
   .form-wrapper {
     width: 100%;
@@ -196,8 +207,12 @@ nav a:hover{
     font-size: 24px;
     margin: 0;
   }
-  .form-wrapper p {
-    font-size: 12px
+
+  .form-wrapper a {
+    font-size: 12px;
+    text-decoration: none;
+    color:  rgb(72, 163, 140);
+    margin: 1.4em;
   }
 }
 
