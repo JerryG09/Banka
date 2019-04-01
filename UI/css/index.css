@@ -1,6 +1,7 @@
 :root {
   --background: rgba(5, 214, 10);
   --dark: rgba(0, 0, 10, 0.95);
+  --light: rgb(243, 247, 243);
   --dark-background: rgba(253, 253, 253, 0.95);
   --light-background: rgba(233, 233, 245, 0.95);
 }
@@ -46,7 +47,7 @@ header a {
 }
 
 header h1 {
-  margin: 0
+  margin: 0;
 }
 
 .nav-toggle {
@@ -112,7 +113,7 @@ nav li {
 }
 
 nav a {
-  color: white;
+  color: var(--dark);
   text-decoration: none;
   font-size: 1.2rem;
   opacity: 0;
@@ -120,7 +121,7 @@ nav a {
 }
 
 nav a:hover{
-  color: black;
+  color: var(--light)
 }
 
 .nav-toggle:checked ~ nav{
@@ -201,13 +202,18 @@ nav a:hover{
   width: 70%;
   color: #521f1f;
   background: #f3f3f3;
-  padding: 1em
+  padding: 1em;
+  border-radius: 1em;
 }
 
 .form-wrapper a {
   text-decoration: none;
   color:  rgb(72, 163, 140);
   margin: 1.4em;
+}
+
+.form-wrapper a:hover {
+  color: #000;
 }
 
 .form-wrapper img {
@@ -235,7 +241,7 @@ nav a:hover{
   flex-direction: column;
   background-color: var(--light-background);
   padding-top: .5rem;
-  flex: 1 1 5rem;
+  flex: 1 1 2rem;
 }
 
 .user-profile .top {
@@ -253,7 +259,6 @@ nav a:hover{
   display: flex;
   flex-direction: column;
   text-align: left;
-  text-transform: uppercase;
   padding-left: .5rem;
 }
 
@@ -264,6 +269,8 @@ nav a:hover{
 
 .bottom a:hover {
   background: var(--dark-background);
+  color: var(--dark);
+  font-weight: bold;
 }
 
 .u-content {
@@ -275,11 +282,21 @@ nav a:hover{
   background-color: var(--dark-background);
   padding-top: 3rem;
   flex: 4 4;
+  align-items: center;
 }
 
 @media all and (max-width: 540px) {
   .group {
-      flex-direction: column
+      flex-direction: column;
+  }
+
+  .user-profile .top {
+    display: none;
+  }
+
+  .user-profile {
+    margin-top: 1.5rem;
+    flex: 1 1 .1em;
   }
 }
 
@@ -303,13 +320,18 @@ nav a:hover{
   padding: 10px
 }
 
-.form-wrapper option[value="hidden"] {
+.form-wrapper option[value="hidden"], 
+.create-account option[value="hidden"] {
   display: none
 }
 
 .form-wrapper input[type="password"],
+.create-account input[type="text"],
+.create-account input[type="email"],
+.create-account select[id="account"],
 .form-wrapper input[type="email"],
 .form-wrapper select[id="account"],
+.a-history input[type="text"],
 .form-wrapper input[type="text"]{
   border: .5px solid #9e8d8d;
   background: -o-repeating-linear-gradient();
@@ -326,15 +348,20 @@ nav a:hover{
   cursor: pointer;
   border-radius: 20px;
   border: none;
-  width: 14rem;
+  width: 9rem;
   outline: none;
   color: #fff;
-  float: right;
+  margin: 1rem;
+}
+
+#delete {
+  background: rgb(243, 74, 62);
 }
 
 .btn:hover{
   background: rgb(8, 250, 101);
   color: #fff;
+  font-weight: bold;
 }
 
 .main-wrapper p {
@@ -352,6 +379,115 @@ nav a:hover{
   background: #ccc;
   width: 100%;
   text-align: center;
+}
+
+/* Admin Dashboard */
+.top-db {
+  display: flex;
+  margin: 0 3rem;
+  justify-content: center;
+}
+
+.credit, .debit {
+  height: 5em;
+  width: 8em;
+  color: white;
+  border-radius: 10px;
+  box-shadow: blue;
+  background: rgb(115, 240, 163);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.debit:hover,
+.credit:hover,
+.activate:hover,
+.deactivate:hover {
+  cursor: pointer;
+  font-weight: bold;
+  color: rgb(243, 235, 235)
+}
+
+.history-bt {
+  margin-top: 4rem;
+  border-top: 1px solid #ccc;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.deactivate {
+  margin-top: 2em;
+  height: 5em;
+  width: 8em;
+  color: white;
+  border-radius: 10px;
+  box-shadow: blue;
+  background: rgb(248, 6, 26);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.debit {
+  background: rgb(243, 216, 94) !important;
+  margin-left: 12em;
+}
+
+@media all and (max-width: 800px) {
+  .top-db {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .debit {
+    margin-left: 0;
+    margin-top: 1.2em;
+  }
+}
+
+/* Account Number */
+.acc-p {
+  place-content: center
+}
+
+#status-id {
+  display: none;
+}
+
+.status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 1em;
+  width: 14em;
+  height: 10em;
+  justify-content: center;
+}
+
+.activate {
+  height: 3em;
+  width: 5em;
+  color: white;
+  border-radius: 10px;
+  box-shadow: blue;
+  background: rgb(115, 240, 163);
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+/* Admin Create Account */
+.create-account {
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  width: 87%;
+  background: #f3f3f3;
+  padding: .4em
 }
 
 
