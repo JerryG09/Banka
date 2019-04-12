@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./css/index.css">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <h1 class="logo-sp">Banka</h1>
+    <a href="index.html">Logout</a>
+  </header>
+
+  <main class="main-wrapper-u">
+    <div class="group">
+      <aside class="user-profile">
+        <div class="top">
+          <h4>Welcome</h4>
+          <img src="./img/user.png" alt="">
+          <p>Jenny</p>
+        </div>
+        <div class="bottom">
+          <a href="#">User Account</a>
+          <a href="#">Transaction</a>
+          <a href="#">View Account</a>
+          <a href="deleteAccount.html">Delete Account</a>
+        </div>
+      </aside>
+      <article class="u-content">
+          <div class="create-account">
+              <h3>Create New Account</h3>
+              <input type="text" placeholder="First Name" class="txtb" required>
+              <input type="text" placeholder="Last Name" class="txtb" required>
+              <input type="text" placeholder="Phone Number" class="txtb" required>
+              <input type="email" placeholder="Email" class="txtb" required>
+              <input type="text" placeholder="Address" class="txtb" required>
+              <select required id="account">
+                <option value="hidden">Account Type</option>
+                <option value="Savings">Savings</option>
+                <option value="Current">Current</option>
+              </select>
+              <div class="sign-btn">
+                  <button type="submit" class="btn">Submit</button>
+              </div>
+            </div>
+      </article>
+    </div>
+  </main>
+  <footer class="footer">
+    <p>&copy; 2019. Jeremiah Oyebamiji.</p>
+  </footer>
+</body>
+</html>
