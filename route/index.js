@@ -3,10 +3,10 @@ import User from '../dommycontroller/user-controller.js';
 
 const router = express.Router();
 
-const { createUser, getAllUsers } = User;
+const { createUser, loginUser } = User;
 
 router.post('/auth/signup', createUser);
-router.get('/api/users', getAllUsers);
+router.get('/auth/sign', loginUser);
 
 
 export default router;
