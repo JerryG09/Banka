@@ -1,14 +1,13 @@
-
-const transaction = [
-  {
-  id:1,
-  "accountNumber": 00100200,
-  "createdOn": Date.now,
-  "owner": "userId",
-  "type": ['savings', 'current'],
-  "status": ['draft', 'active', 'dormant'],
-  "balance": number
+class Account {
+  constructor() {
+    this.id = null;
+    this.accountNumber = null;
+    this.createdOn = null;
+    this.owner = null;
+    this.type = null;
+    this.status = null;
+    this.balance = null;
+  }
 }
-]
 
-export default transaction;
+export default Account;

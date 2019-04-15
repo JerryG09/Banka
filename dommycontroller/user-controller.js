@@ -1,6 +1,6 @@
 import db from '../dommyDb/users.js';
 import jwt from 'jsonwebtoken';
-import bcryt from 'bcryptjs';
+import bcrypt from 'bcryptjs';
 import config from 'config';
 
 class User {
@@ -36,8 +36,8 @@ class User {
     })
 
     // Create salt and hash
-    bcryt.genSalt(10, (err, salt) => {
-      bcryt.hash(user.password, salt, (err, hash) => {
+    bcrypt.genSalt(10, (err, salt) => {
+      bcrypt.hash(user.password, salt, (err, hash) => {
         if (err) throw err;
         user.password = hash;
         db.push(user);
@@ -73,54 +73,53 @@ class User {
    * @returns {*} json 
    */
   static loginUser(req, res) {
-    if (!user.email || !user.password) {
+    const {
+      email,
+      password
+    } = req.body
+
+    if (!email || !password) {
       return res.status(400).json({
         msg: 'Please enter all fields'
       })
     }
-
     //  Check for user
     db.map((data) => {
-      if (!data.email === user.email) {
+      if (!data.email === email) {
         return res.status(400).json({
           msg: 'User does not exit'
         })
-
-        // Validate password
-        bcrypt.compare(password, data.password)
-          .then(isMatch => {
-            if (!isMatch) return res.status(400).json({
-              msg: 'Invalid credentials'
-            });
-
-            // Sign Token
-            jwt.sign({
-                isAdmin: user.isAdmin,
-                type: user.type
-              },
-              config.get('jwtSecret'), {
-                expiresIn: 3600
-              },
-              (err, token) => {
-                if (err) throw err;
-                return res.status(201).json({
-                  status: 201,
-                  token,
-                  user: {
-                    id: user.id,
-                    firstName: user.firstName,
-                    lastName: user.lastName,
-                    email: user.email
-                  }
-                })
-              })
-
-          })
       }
+      console.log(password, data.password)
+      bcrypt.compare(data.password, password)
+        .then(isMatch => {
+          if(!isMatch) return res.status(400).json({ msg: 'Invalid credentials'});
+
+          // Sign Token
+          jwt.sign({
+              isAdmin: data.isAdmin,
+              type: data.type
+            },
+            config.get('jwtSecret'), {
+              expiresIn: 3600
+            },
+            (err, token) => {
+              if (err) throw err;
+              return res.status(201).json({
+                status: 201,
+                token,
+                data: {
+                  id: data.id,
+                  firstName: data.firstName,
+                  lastName: data.lastName,
+                  email: data.email
+                }
+              })
+            })
+        })
+        .catch(err => console.log(err));
     })
   }
-
-
 
 }
 
