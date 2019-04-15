@@ -1,23 +1,13 @@
-
-const userDetails = [
-  {
-  id:1,
-  "email": "user1@gmail.com",
-  "firstName": "Pearl",
-  "lastName": "Pearson",
-  "password": "123456",
-  "type": "client",
-  "isAdmin": Boolean
-},
-{
-  id:2,
-  "email": "user2@gmail.com",
-  "firstName": "Poppy",
-  "lastName": "Push",
-  "password": "123456",
-  "type": "client",
-  "isAdmin": Boolean
+class User {
+  constructor() {
+    this.id = null;
+    this.email = null;
+    this.firstName = null;
+    this.lastName = null;
+    this.password = null;
+    this.type = null;
+    this.isAdmin = null;
+  }
 }
-]
 
-export default userDetails;
+export default User;

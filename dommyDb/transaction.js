@@ -1,15 +1,15 @@
 
-const account = [
-  {
-  id:1,
-  "createdOn": Date.now,
-  "type": ['credit', 'debit'],
-  "accountNumber": 0010020030,
-  "cashier": 002,
-  "amount": number,
-  "oldBalance": number,
-  "newBalance": number
+class Transaction {
+  constructor() {
+    this.id = null;
+    this.createdOn = null;
+    this.type = null;
+    this.accountNumber = null;
+    this.cashier = null;
+    this.amount = null;
+    this.oldBalance = null;
+    this.newBalance = null;
+  }
 }
-]
 
-export default account;
+export default Transaction;
