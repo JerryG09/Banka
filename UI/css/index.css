@@ -224,7 +224,7 @@ nav a:hover{
 /* User Profile */
 .main-wrapper-u {
   display: flex;
-  height: 140vh;
+  height: 130vh;
   background-image: url('../img/showcase2.jpg');
 }
 
