@@ -1,4 +1,4 @@
-import db from '../dommyDb/users.js';
+import db from '../seed/seed';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 import config from 'config';
@@ -27,13 +27,13 @@ class User {
     }
 
     //  Check for existing user
-    db.map((data) => {
-      if (data.email === user.email) {
-        return res.status(400).json({
-          msg: 'User already exits'
-        })
-      }
-    })
+    // db.map((data) => {
+    //   if (data.email === user.email) {
+    //     return res.status(400).json({
+    //       msg: 'User already exits'
+    //     })
+    //   }
+    // })
 
     // Create salt and hash
     bcrypt.genSalt(10, (err, salt) => {
