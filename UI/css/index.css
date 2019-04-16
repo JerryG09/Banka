@@ -184,7 +184,7 @@ nav a:hover{
 
 .main-wrapper-1 {
   height: 100vh;
-  background-image: url('../img/showcase.jpg');
+  background-image: url('../img/showcase2.jpg');
   background-color: #333;
   background-size: cover;
   display: flex;
@@ -199,7 +199,7 @@ nav a:hover{
   flex-direction: column;
   justify-self: center;
   text-align: center;
-  width: 70%;
+  width: 35%;
   color: #521f1f;
   background: #f3f3f3;
   padding: 1em;
@@ -208,12 +208,12 @@ nav a:hover{
 
 .form-wrapper a {
   text-decoration: none;
-  color:  rgb(72, 163, 140);
+  color:  rgb(12, 11, 11);
   margin: 1.4em;
 }
 
 .form-wrapper a:hover {
-  color: #000;
+  color: rgb(11, 15, 4);
 }
 
 .form-wrapper img {
@@ -225,7 +225,7 @@ nav a:hover{
 .main-wrapper-u {
   display: flex;
   height: 140vh;
-  background-image: url('../img/showcase.jpg');
+  background-image: url('../img/showcase2.jpg');
 }
 
 .group {
@@ -285,6 +285,35 @@ nav a:hover{
   align-items: center;
 }
 
+/* Transaction Table */
+#customers {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 80%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+/* #customers tr:nth-child(even){background-color: #f2f2f2;} */
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color:  rgba(5, 214, 10);
+  color: white;
+}
+
+#u-pro-2 td {
+  text-align: left;
+  padding: 0.3em 1em;
+}
+
 @media all and (max-width: 540px) {
   .group {
       flex-direction: column;
@@ -300,9 +329,18 @@ nav a:hover{
   }
 }
 
+@media only screen and (max-width:800px) {
+  .form-wrapper {
+    width: 50%;
+    height: 100vh;
+    font-size: 24px;
+    margin: 0;
+  }
+}
+
 @media only screen and (max-width:540px) {
   .form-wrapper {
-    width: 100%;
+    width: 70%;
     height: 100vh;
     font-size: 24px;
     margin: 0;
@@ -325,6 +363,14 @@ nav a:hover{
   display: none
 }
 
+.hgt-yt a {
+  text-decoration: none;
+  background:  rgba(5, 214, 10);
+  padding: 2px 10px;
+  border-radius: 3px;
+  margin-top: 2em
+}
+
 .form-wrapper input[type="password"],
 .create-account input[type="text"],
 .create-account input[type="email"],
@@ -332,6 +378,7 @@ nav a:hover{
 .form-wrapper input[type="email"],
 .form-wrapper select[id="account"],
 .a-history input[type="text"],
+.top-db input[type="number"],
 .form-wrapper input[type="text"]{
   border: .5px solid #9e8d8d;
   background: -o-repeating-linear-gradient();
@@ -354,6 +401,13 @@ nav a:hover{
   margin: 1rem;
 }
 
+.db-btn1 a,
+.acc-btn a,
+.top-db a {
+  text-decoration: none;
+  color: white
+}
+
 #delete {
   background: rgb(243, 74, 62);
 }
@@ -369,6 +423,12 @@ nav a:hover{
 }
 
 /* Transaction Details */
+.trans-tb {
+  text-align: left;
+  padding: 3px;
+  font-size: 20px;
+}
+
 .u-table {
   display: flex;
   flex-direction: column;
@@ -485,7 +545,7 @@ nav a:hover{
   justify-content: center;
   display: flex;
   flex-direction: column;
-  width: 87%;
+  width: 50%;
   background: #f3f3f3;
   padding: .4em
 }
